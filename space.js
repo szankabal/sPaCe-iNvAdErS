@@ -8,3 +8,11 @@ const generate2d = (n = 20, m = 20) => {
   }
   return arr;
 };
+
+const randomNum = (max) => {
+  return Math.floor(Math.random() * ((max + 1) - 0));
+};
+
+const main = () => {
+  generate2d();
+};
