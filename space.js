@@ -17,15 +17,26 @@ const randomNum = (max) => {
 
 const player = (x, y, array) => {
   array[x][y] = 'P';
-  return "";
-}
+  return '';
+};
+
 const main = () => {
   generate2d();
-  let x = randomNum(20);
-  let y = 0;
+  const x = randomNum(20);
+  const y = 0;
   const array = generate2d();
   player(x, y, array);
   console.log(array);
+};
+
+const spawnMeteor = (array) => {
+  const r1 = randomNum(20);
+  const r2 = randomNum(20);
+  if (r2 === r1) {
+    spawnMeteor(array);
+  }
+  array[r1][array[r1].length - 1] = 'x';
+  array[r2][array[r2].length - 1] = 'x';
 };
 
 main();
